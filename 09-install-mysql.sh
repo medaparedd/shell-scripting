@@ -4,9 +4,10 @@ ID=$(id -u)
 
 if [ $ID -ne 0 ]
 then
-    echo "error:: please ru the script again"
+    echo "not a root user"
+    exit 1
 else
-    echo  "proceed"
+    echo "root user"
 fi
 
 yum install mysql -y
