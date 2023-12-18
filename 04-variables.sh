@@ -3,7 +3,7 @@
 PERSON1=$1
 PERSON2=$2
 
-echo "ramesh: hi"
-echo "suresh: hello"
-echo "ramesh: how are you?"
-echo "suresh: i am fine"
+echo "$PERSON1: hi"
+echo "$PERSON2: hello"
+echo "$PERSON1: how are you?"
+echo "$PERSON2: i am fine"
