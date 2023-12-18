@@ -8,3 +8,5 @@ then
 else
     echo  "proceed"
 fi
+
+yum install mysql -y
