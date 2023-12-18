@@ -1,8 +1,9 @@
 #!/bin/bash
 
 ID=$(id -u)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 
-echo "script name: $0"
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE(){
     
@@ -26,10 +27,10 @@ fi
 
 
 
-yum install mysql -y
+yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "mysql installing"
 
-yum install git -y
+yum install git -y &>> $LOGFILE
 
 VALIDATE $? "git installing"
