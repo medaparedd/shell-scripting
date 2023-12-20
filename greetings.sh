@@ -21,7 +21,7 @@ while getopts ":n:w:h" opt; do
     esac
 done
 
-if [ -z "$NAME" ] || [ -z "$wishes" ]; then
+if [ -z "$NAME" ] || [ -z "$WISHES" ]; then
    echo "error"
    USAGE
    exit 1
