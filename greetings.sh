@@ -15,6 +15,16 @@ while getopts ":n:w:h" opt; do
      case $opt in 
        n) NAME="$OPTARG";;
        w) WISHES="$OPTARG";;
-       h|*) USAGE; exit;;
+       \?) echo "invalid options: -"$OPTARG"" >&2; USAGE; exit;;
+       :) USAGE; exit;;
+       h) USAGE; exit;;
     esac
 done
+
+if [ -z "$NAME" ] || [ -z "$wishes" ]; then
+   echo "error"
+   USAGE
+   exit 1
+fi
+
+echo "hello $NAME. $WISHES. I HAVE BEEN LEARNING SHELL SCRIPTING."
