@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "please enter your $SOURCE_DIR"
+echo "please enter your SOURCE_DIR"
 read $SOURCE_DIR
 echo "the source-directory you entered is: $SOURCE_DIR"
 
