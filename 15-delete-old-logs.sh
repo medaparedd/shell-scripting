@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_DIR="/tmp/shellscript-logs"
+SOURCE_DIR="/temp"
 
 R="\e[31m"
 G="\e[32m"
@@ -10,9 +10,14 @@ N="\e[0m"
 if [ ! -d $SOURCE_DIR ]
 then
     echo -e "$R Source Directory: $SOURCE_DIR does not exists"
+    exit 1
+else
+    echo -e "$G its exists, you can proceed to further process"
 fi
 
-FILES_TO_DELETE=$(find $SOURCE_DIR  -type f -mtime +14 -name "*.log")
+cd /$SOURCE_DIR/
+
+FILES_TO_DELETE=$(find .  -type f -mtime +14 -name "*.log")
 
 while IFS= read -r line
 do
