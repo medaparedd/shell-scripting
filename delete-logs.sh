@@ -1,6 +1,7 @@
 #!/bin/bash
-
-SOURCE_DIR="/tmp/shellscript-logs/"
+echo "please enter your source-directory"
+read $SOURCE_DIR
+echo "the source-directory you entered is: $SOURCE_DIR"
 
 R="\e[31m"
 G="\e[32m"
@@ -16,6 +17,10 @@ else
 fi
 
 cd /$SOURCE_DIR/
+echo "do you want to delete it or archieve it"
+read $option
+if [ $option == delete ]
+then
 
 FILES_TO_DELETE=$(find .  -type f -mtime +14 -name "*.log")
 
@@ -24,3 +29,5 @@ do
    echo "Deleting file: $line"
    rm -rf $line
 done <<< $FILES_TO_DELETE
+else
+   tar -xzvf (*.log)
